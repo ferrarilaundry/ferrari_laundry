@@ -18,6 +18,18 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMobileMenuOpen]);
+
   const navLinks = [
     { key: 'nav.home', href: '#home' },
     { key: 'nav.services', href: '#services' },
@@ -33,7 +45,7 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+      className={`fixed top-0 left-0 right-0 z-[60] transition-all duration-300 ${isScrolled
         ? 'bg-background/95 backdrop-blur-md shadow-soft'
         : 'bg-transparent'
         }`}
@@ -87,34 +99,34 @@ const Header = () => {
 
         {/* Mobile Menu - Full Screen Overlay */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden fixed inset-0 top-0 z-50 bg-background animate-fade-in">
+          <div className="lg:hidden fixed inset-0 z-[100] bg-background/98 backdrop-blur-xl animate-fade-in flex flex-col">
             {/* Mobile Menu Header */}
-            <div className="flex items-center justify-between h-16 px-4 border-b border-border">
+            <div className="flex items-center justify-between h-20 px-6 border-b border-border/50">
               <a href="#home" className="flex items-center" onClick={() => setIsMobileMenuOpen(false)}>
                 <img
                   src={logo}
                   alt="Ferrari Express Laundry"
-                  className="h-12 w-auto object-contain"
+                  className="h-14 w-auto object-contain"
                 />
               </a>
               <button
-                className="p-2 text-foreground hover:bg-muted rounded-lg transition-colors"
+                className="p-3 -mr-2 text-foreground/80 hover:text-brand-red rounded-full hover:bg-muted transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
                 aria-label="Close menu"
               >
-                <X className="h-6 w-6" />
+                <X className="h-8 w-8" />
               </button>
             </div>
 
             {/* Mobile Menu Content */}
-            <div className="flex flex-col h-[calc(100vh-64px)] px-6 py-6">
+            <div className="flex flex-col flex-1 px-6 py-8 overflow-y-auto">
               {/* Navigation Links */}
-              <nav className="flex flex-col gap-1 flex-1">
+              <nav className="flex flex-col gap-4 flex-1">
                 {navLinks.map((link, index) => (
                   <a
                     key={link.key}
                     href={link.href}
-                    className="px-4 py-4 text-lg font-semibold text-foreground hover:bg-primary/10 rounded-xl transition-all active:scale-[0.98]"
+                    className="flex items-center justify-between py-3 text-2xl font-bold text-foreground hover:text-brand-yellow border-b border-transparent hover:border-border/50 transition-all duration-300"
                     onClick={() => setIsMobileMenuOpen(false)}
                     style={{ animationDelay: `${index * 50}ms` }}
                   >
@@ -123,12 +135,12 @@ const Header = () => {
                 ))}
               </nav>
 
-              <div className="flex flex-col gap-3 pt-6 border-t border-border">
+              <div className="flex flex-col gap-4 mt-auto pt-8">
                 {/* Language Toggle */}
                 <Button
                   variant="outline"
                   onClick={handleLanguageToggle}
-                  className="w-full h-12 justify-center gap-2 rounded-xl text-base font-semibold"
+                  className="w-full h-12 justify-center gap-2 rounded-xl text-lg font-medium border-2 hover:bg-muted"
                 >
                   <Globe className="h-5 w-5" />
                   {language === 'en' ? 'العربية' : 'English'}
