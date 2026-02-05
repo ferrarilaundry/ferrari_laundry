@@ -44,7 +44,7 @@ const Hero = () => {
           {/* Trust Badge */}
           <div className="mt-12 animate-fade-in" style={{ animationDelay: '0.6s' }}>
             <p className="text-foreground/60 text-sm font-medium">
-              ⭐⭐⭐⭐⭐ Trusted by 1000+ Kuwaiti Families
+              ⭐⭐⭐⭐⭐ Trusted by 10000+ Kuwaiti Families
             </p>
           </div>
         </div>

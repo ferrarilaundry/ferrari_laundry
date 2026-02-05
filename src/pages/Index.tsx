@@ -11,6 +11,9 @@ import About from '@/components/About';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import FloatingButtons from '@/components/FloatingButtons';
+import Offers from '@/components/Offers';
+import FAQs from '@/components/FAQs';
+import Jobs from '@/components/Jobs';
 
 const Index = () => {
   const { language } = useLanguage();
@@ -41,8 +44,11 @@ const Index = () => {
         <WhyChooseUs />
         <Services />
         <Subscriptions />
+        <Offers />
         <Branches />
         <About />
+        <FAQs />
+        <Jobs />
         <Contact />
       </main>
       <Footer />

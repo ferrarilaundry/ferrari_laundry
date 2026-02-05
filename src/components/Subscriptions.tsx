@@ -8,8 +8,11 @@ const Subscriptions = () => {
 
   const plans = [
     { pay: 20, get: 25, popular: false },
-    { pay: 30, get: 40, popular: true },
+    { pay: 30, get: 40, popular: true }, // Existing Popular
+    { pay: 40, get: 55, popular: false }, // New
     { pay: 50, get: 65, popular: false },
+    { pay: 80, get: 105, popular: false }, // New
+    { pay: 100, get: 140, popular: false }, // New
   ];
 
   return (
@@ -26,15 +29,14 @@ const Subscriptions = () => {
         </div>
 
         {/* Plans Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {plans.map((plan, index) => (
             <div
               key={plan.pay}
-              className={`relative rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 ${
-                plan.popular
-                  ? 'bg-foreground text-background shadow-elevated scale-105'
+              className={`relative rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 ${plan.popular
+                  ? 'bg-foreground text-background shadow-elevated scale-105 z-10'
                   : 'bg-card border border-border shadow-card hover:shadow-elevated'
-              }`}
+                }`}
             >
               {/* Popular Badge */}
               {plan.popular && (

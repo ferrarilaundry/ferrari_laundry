@@ -30,13 +30,19 @@ const Header = () => {
     };
   }, [isMobileMenuOpen]);
 
+
   const navLinks = [
     { key: 'nav.home', href: '#home' },
     { key: 'nav.services', href: '#services' },
     { key: 'nav.subscriptions', href: '#subscriptions' },
+    { key: 'nav.offers', href: '#offers' },
     { key: 'nav.branches', href: '#branches' },
+    { key: 'nav.about', href: '#about' },
+    { key: 'nav.faqs', href: '#faqs' },
+    { key: 'nav.jobs', href: '#jobs' },
     { key: 'nav.contact', href: '#contact' },
   ];
+
 
   const handleLanguageToggle = () => {
     setLanguage(language === 'en' ? 'ar' : 'en');
