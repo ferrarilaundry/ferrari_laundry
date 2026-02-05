@@ -34,8 +34,8 @@ const Subscriptions = () => {
             <div
               key={plan.pay}
               className={`relative rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 ${plan.popular
-                  ? 'bg-foreground text-background shadow-elevated scale-105 z-10'
-                  : 'bg-card border border-border shadow-card hover:shadow-elevated'
+                ? 'bg-foreground text-background shadow-elevated scale-105 z-10'
+                : 'bg-card border border-border shadow-card hover:shadow-elevated'
                 }`}
             >
               {/* Popular Badge */}
@@ -64,9 +64,14 @@ const Subscriptions = () => {
                 <p className={`text-lg mb-2 ${plan.popular ? 'text-background/70' : 'text-muted-foreground'}`}>
                   {t('subscriptions.get')}
                 </p>
-                <p className={`text-4xl md:text-5xl font-extrabold mb-8 ${plan.popular ? 'text-primary' : 'text-brand-green'}`}>
+                <p className={`text-4xl md:text-5xl font-extrabold mb-4 ${plan.popular ? 'text-primary' : 'text-brand-green'}`}>
                   {plan.get}
                   <span className="text-lg font-medium ms-1">{t('subscriptions.kd')}</span>
+                </p>
+
+                {/* Free Delivery Included */}
+                <p className={`text-sm font-medium mb-8 ${plan.popular ? 'text-background/80' : 'text-muted-foreground'}`}>
+                  {t('subscriptions.freeDelivery')}
                 </p>
 
                 {/* CTA Button */}

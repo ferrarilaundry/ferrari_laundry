@@ -4,7 +4,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 
 const Branches = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const branches = [
     {

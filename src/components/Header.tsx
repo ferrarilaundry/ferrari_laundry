@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Globe } from 'lucide-react';
+import { Menu, X, Globe, Instagram } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import logo from '@/assets/logo.jpeg';
 import ContactButtons from '@/components/ContactButtons';
+import SocialIcon from '@/components/SocialIcon';
 
 const Header = () => {
   const { language, setLanguage, t, isRTL } = useLanguage();
@@ -81,6 +82,11 @@ const Header = () => {
           </nav>
 
           <div className="hidden lg:flex items-center gap-3">
+            <SocialIcon
+              href="https://www.instagram.com/ferrarilaundries_kw"
+              icon={Instagram}
+              label={t('social.instagram')}
+            />
             <ContactButtons layout="inline" compact className="w-auto" />
             <Button
               variant="outline"
@@ -142,16 +148,6 @@ const Header = () => {
               </nav>
 
               <div className="flex flex-col gap-4 mt-auto pt-8">
-                {/* Language Toggle */}
-                <Button
-                  variant="outline"
-                  onClick={handleLanguageToggle}
-                  className="w-full h-12 justify-center gap-2 rounded-xl text-lg font-medium border-2 hover:bg-muted"
-                >
-                  <Globe className="h-5 w-5" />
-                  {language === 'en' ? 'العربية' : 'English'}
-                </Button>
-
                 {/* CTA Buttons */}
                 <ContactButtons layout="stack" />
               </div>

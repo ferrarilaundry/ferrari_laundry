@@ -62,10 +62,10 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-medium text-foreground">
-                      {language === 'en' ? 'Open Daily' : 'مفتوح يومياً'}
+                      {t('contact.openTitle')}
                     </p>
                     <p className="text-sm">
-                      {language === 'en' ? '8:00 AM - 10:00 PM' : '8:00 صباحاً - 10:00 مساءً'}
+                      {t('contact.openValue')}
                     </p>
                   </div>
                 </div>

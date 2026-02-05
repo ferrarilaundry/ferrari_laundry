@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sparkles, Shield, Zap, Heart } from 'lucide-react';
+import { Sparkles, Shield, Zap, Heart, Truck } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const WhyChooseUs = () => {
@@ -26,6 +26,11 @@ const WhyChooseUs = () => {
       titleKey: 'why.trusted',
       color: 'brand-yellow',
     },
+    {
+      icon: Truck,
+      titleKey: 'why.freeDelivery',
+      color: 'brand-blue', // Reusing blue for a professional logistics feel
+    },
   ];
 
   return (
@@ -37,7 +42,7 @@ const WhyChooseUs = () => {
         </h2>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 justify-center">
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (

@@ -1,7 +1,8 @@
 import React from 'react';
-import { Phone, MessageCircle, MapPin, Globe } from 'lucide-react';
+import { Phone, MessageCircle, MapPin, Globe, Instagram } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import logo from '@/assets/logo.jpeg';
+import SocialIcon from '@/components/SocialIcon';
 
 const Footer = () => {
   const { t, language, setLanguage } = useLanguage();
@@ -20,9 +21,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <img 
-              src={logo} 
-              alt="Ferrari Express Laundry" 
+            <img
+              src={logo}
+              alt="Ferrari Express Laundry"
               className="h-16 w-auto mb-4 rounded-lg"
             />
             <p className="text-background/70 text-sm leading-relaxed">
@@ -38,7 +39,7 @@ const Footer = () => {
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.key}>
-                  <a 
+                  <a
                     href={link.href}
                     className="text-background/70 hover:text-primary transition-colors text-sm"
                   >
@@ -56,7 +57,7 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3">
               <li>
-                <a 
+                <a
                   href="tel:99930270"
                   className="flex items-center gap-3 text-background/70 hover:text-primary transition-colors text-sm"
                 >
@@ -65,7 +66,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a 
+                <a
                   href="https://wa.me/96599930270"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -80,6 +81,14 @@ const Footer = () => {
                 <span>{language === 'en' ? 'Kuwait' : 'الكويت'}</span>
               </li>
             </ul>
+            <div className="flex gap-4 mt-6">
+              <SocialIcon
+                href="https://www.instagram.com/ferrarilaundries_kw"
+                icon={Instagram}
+                label={t('social.instagram')}
+                className="bg-background/10 hover:bg-background text-background hover:text-[#E1306C]"
+              />
+            </div>
           </div>
 
           {/* Language Switch */}

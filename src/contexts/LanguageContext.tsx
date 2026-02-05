@@ -21,10 +21,12 @@ const translations = {
     'nav.whatsapp': 'WhatsApp',
 
     // Hero
+    'hero.brandName': 'Ferrari Express Laundry',
     'hero.headline': 'Professional Laundry & Dry Cleaning in Kuwait',
     'hero.subheadline': 'We care for your clothes like our own.',
     'hero.callNow': 'Call Now',
     'hero.whatsappChat': 'WhatsApp Chat',
+    'hero.freeDelivery': '🚚 Free Delivery Across Kuwait',
 
     // Why Choose Us
     'why.title': 'Why Choose Us',
@@ -32,6 +34,8 @@ const translations = {
     'why.fabricSafe': 'Fabric-Safe Care',
     'why.fast': 'Fast & Reliable Service',
     'why.trusted': 'Trusted by Kuwaiti Families',
+    'why.freeDelivery': 'Free Pickup & Delivery',
+    'why.freeDelivery.desc': 'Available across all areas of Kuwait.',
 
     // Services
     'services.title': 'Our Services',
@@ -49,12 +53,13 @@ const translations = {
     'subscriptions.subtitle': 'Save More Every Month',
     'subscriptions.pay': 'Pay',
     'subscriptions.get': 'Get',
+    'subscriptions.freeDelivery': '✔ Free pickup & delivery included',
     'subscriptions.kd': 'KD',
     'subscriptions.subscribe': 'Call to Subscribe',
     'subscriptions.popular': 'Most Popular',
 
     // Branches
-    'branches.title': 'Our Branches',
+    'branches.title': 'Our Central Branch',
     'branches.subtitle': 'Find the nearest Ferrari Express Laundry branch in Kuwait.',
     'branches.sabah.name': 'Sabah Al-Salem Branch',
     'branches.sabah.address': 'Beside American School, Sabah Al-Salem',
@@ -134,6 +139,8 @@ const translations = {
     'contact.callNow': 'Call Now',
     'contact.whatsapp': 'WhatsApp Chat',
     'contact.phone': 'Phone',
+    'contact.openTitle': 'Open 24 Hours',
+    'contact.openValue': 'All Days',
 
     // Footer
     'footer.description': 'Professional laundry and dry-cleaning services in Kuwait. We care for your clothes with precision and trust.',
@@ -141,6 +148,7 @@ const translations = {
     'footer.contactUs': 'Contact Us',
     'footer.followUs': 'Follow Us',
     'footer.rights': '© 2024 Ferrari Express Laundry – Kuwait. All rights reserved.',
+    'social.instagram': 'Follow us on Instagram',
   },
   ar: {
     // Header
@@ -153,10 +161,12 @@ const translations = {
     'nav.whatsapp': 'واتساب',
 
     // Hero
+    'hero.brandName': 'مصبغة فيراري إكسبريس',
     'hero.headline': 'غسيل وتنظيف جاف باحترافية في الكويت',
     'hero.subheadline': 'نعتني بملابسك كما لو كانت لنا',
     'hero.callNow': 'اتصل الآن',
     'hero.whatsappChat': 'تواصل عبر واتساب',
+    'hero.freeDelivery': '🚚 توصيل مجاني في جميع أنحاء الكويت',
 
     // Why Choose Us
     'why.title': 'لماذا تختارنا',
@@ -164,6 +174,8 @@ const translations = {
     'why.fabricSafe': 'عناية آمنة بالأقمشة',
     'why.fast': 'خدمة سريعة وموثوقة',
     'why.trusted': 'ثقة العائلات الكويتية',
+    'why.freeDelivery': 'استلام وتوصيل مجاني',
+    'why.freeDelivery.desc': 'متوفر في جميع مناطق الكويت.',
 
     // Services
     'services.title': 'خدماتنا',
@@ -181,6 +193,7 @@ const translations = {
     'subscriptions.subtitle': 'وفّر أكثر كل شهر',
     'subscriptions.pay': 'ادفع',
     'subscriptions.get': 'تحصل على',
+    'subscriptions.freeDelivery': '✔ يشمل استلام وتوصيل مجاني',
     'subscriptions.kd': 'د.ك',
     'subscriptions.subscribe': 'اشترك الآن',
     'subscriptions.popular': 'الأكثر شعبية',
@@ -266,6 +279,8 @@ const translations = {
     'contact.callNow': 'اتصل الآن',
     'contact.whatsapp': 'تواصل عبر واتساب',
     'contact.phone': 'الهاتف',
+    'contact.openTitle': 'نفتح 24 ساعة',
+    'contact.openValue': 'طوال أيام الأسبوع',
 
     // Footer
     'footer.description': 'خدمات غسيل وتنظيف احترافية في الكويت. نعتني بملابسك بدقة وثقة.',
@@ -273,6 +288,7 @@ const translations = {
     'footer.contactUs': 'تواصل معنا',
     'footer.followUs': 'تابعنا',
     'footer.rights': '© 2024 مصبغة فيراري إكسبرس – الكويت. جميع الحقوق محفوظة.',
+    'social.instagram': 'تابعنا على إنستغرام',
   },
 };
 
