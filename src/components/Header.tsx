@@ -64,7 +64,7 @@ const Header = () => {
             <img
               src={logo}
               alt="Ferrari Express Laundry"
-              className="h-12 md:h-14 w-auto object-contain"
+              className="h-16 md:h-20 w-auto object-contain"
             />
           </a>
 
@@ -93,20 +93,35 @@ const Header = () => {
               size="sm"
               onClick={handleLanguageToggle}
               className="flex items-center gap-2 border-foreground/20"
+              style={{ color: 'hsl(var(--brand-blue))' }}
             >
               <Globe className="h-4 w-4" />
               {language === 'en' ? 'عربي' : 'EN'}
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="lg:hidden p-2 text-foreground"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
+          {/* Mobile Language Toggle */}
+          <div className="lg:hidden flex items-center gap-2">
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={handleLanguageToggle}
+              className="font-bold hover:bg-white/20 px-2"
+              style={{ color: 'hsl(var(--brand-blue))' }}
+            >
+              <Globe className="h-5 w-5 mr-1" />
+              {language === 'en' ? 'عربي' : 'EN'}
+            </Button>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="lg:hidden p-2 text-foreground"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu - Full Screen Overlay */}
