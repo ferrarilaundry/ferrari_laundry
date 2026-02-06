@@ -15,7 +15,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen w-screen flex flex-col justify-start md:justify-center md:items-center pt-32 md:pt-20 gradient-hero overflow-hidden"
+      className="relative min-h-screen w-screen flex flex-col justify-start md:justify-center md:items-center pt-24 md:pt-20 gradient-hero overflow-hidden"
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
@@ -31,7 +31,7 @@ const Hero = () => {
 
 
 
-      <div className="container mx-auto px-4 relative z-10 mt-12 md:mt-0">
+      <div className="container mx-auto px-4 relative z-10 mt-4 md:mt-0">
         <div className="max-w-4xl mx-auto text-center">
           {/* Brand Name */}
           <p className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-brand-red tracking-wider mb-4 animate-slide-up drop-shadow-sm" aria-label="Ferrari Express Laundry">
