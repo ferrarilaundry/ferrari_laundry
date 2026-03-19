@@ -3,6 +3,7 @@ import SEO from '@/components/SEO';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
+import SEOContent from '@/components/SEOContent';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import Services from '@/components/Services';
 import Subscriptions from '@/components/Subscriptions';
@@ -21,11 +22,11 @@ const Index = () => {
   const seoContent = {
     en: {
       title: "Professional Laundry & Dry Cleaning in Kuwait | Ferrari Express Laundry",
-      description: "Ferrari Express Laundry offers professional laundry, dry cleaning, ironing, and traditional wear care across Kuwait. Call 99930270."
+      description: "Ferrari Express Laundry – Professional laundry service, dry cleaning, and free pickup & delivery across Kuwait. Call 99930270. Serving Kuwait since 2002."
     },
     ar: {
-      title: "مصبغة فيراري إكسبريس – غسيل و دراي كلين احترافي في الكويت",
-      description: "مصبغة فيراري إكسبريس تقدم خدمات غسيل وكي ودراي كلين باحترافية في جميع مناطق الكويت. اتصل الآن 99930270."
+      title: "مصبغة فيراري إكسبريس – غسيل ودراي كلين احترافي في الكويت",
+      description: "مصبغة فيراري إكسبريس – خدمات غسيل ملابس ودراي كلين واستلام وتوصيل مجاني في جميع مناطق الكويت. اتصل الآن 99930270. نخدمكم منذ 2002."
     }
   };
 
@@ -39,8 +40,9 @@ const Index = () => {
         canonical="https://ferrariexpress.com/"
       />
       <Header />
-      <main>
+      <main id="main-content">
         <Hero />
+        <SEOContent />
         <WhyChooseUs />
         <Services />
         <Subscriptions />

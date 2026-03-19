@@ -1,16 +1,21 @@
 import React from 'react';
-import { Award, Users, Clock, Shield, Target, Lightbulb, CheckCircle2 } from 'lucide-react';
+import { Award, Users, Truck, UserCheck, Target, Lightbulb, CheckCircle2 } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import logo from '@/assets/logo.jpeg';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import StatCounter from '@/components/StatCounter';
 
 const About = () => {
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
+  const { ref: introRef, isVisible: introVisible } = useScrollAnimation();
+  const { ref: statsRef, isVisible: statsVisible } = useScrollAnimation();
+  const { ref: bottomRef, isVisible: bottomVisible } = useScrollAnimation();
 
   const stats = [
+    { icon: Award, label: 'about.stats.kilos' },
     { icon: Users, label: 'about.stats.families' },
-    { icon: Clock, label: 'about.stats.experience' },
-    { icon: Award, label: 'about.stats.rating' },
-    { icon: Shield, label: 'about.stats.quality' },
+    { icon: UserCheck, label: 'about.stats.staff' },
+    { icon: Truck, label: 'about.stats.vehicles' },
   ];
 
   const values = [
@@ -22,104 +27,102 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-16 md:py-24 bg-background">
+    <section id="about" className="py-16 md:py-20 bg-white">
       <div className="container mx-auto px-4">
+
         {/* Main Introduction */}
-        <div className="max-w-4xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+        <div
+          ref={introRef as React.RefObject<HTMLDivElement>}
+          className={`max-w-3xl mx-auto text-center mb-12 reveal${introVisible ? ' reveal-visible' : ''}`}
+        >
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
             {t('about.title')}
           </h2>
-          <div className="text-lg md:text-xl text-muted-foreground leading-relaxed space-y-4">
+          <div className="w-12 h-1 bg-brand-yellow mx-auto rounded-full mb-5" />
+          <div className="text-base text-muted-foreground leading-relaxed space-y-3">
             <p>{t('about.description')}</p>
             <p>{t('about.description2')}</p>
           </div>
         </div>
 
-        {/* Mission & Vision Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-16">
-          {/* Mission */}
-          <div className="bg-secondary/20 rounded-2xl p-8 border border-border/50 hover:shadow-card transition-all duration-300">
-            <div className="w-12 h-12 bg-brand-red/10 rounded-xl flex items-center justify-center mb-6">
-              <Target className="h-6 w-6 text-brand-red" />
-            </div>
-            <h3 className="text-2xl font-bold mb-4">{t('about.mission.title')}</h3>
-            <p className="text-muted-foreground leading-relaxed">
-              {t('about.mission.body')}
-            </p>
-          </div>
-
-          {/* Vision */}
-          <div className="bg-secondary/20 rounded-2xl p-8 border border-border/50 hover:shadow-card transition-all duration-300">
-            <div className="w-12 h-12 bg-brand-blue/10 rounded-xl flex items-center justify-center mb-6">
-              <Lightbulb className="h-6 w-6 text-brand-blue" />
-            </div>
-            <h3 className="text-2xl font-bold mb-4">{t('about.vision.title')}</h3>
-            <p className="text-muted-foreground leading-relaxed">
-              {t('about.vision.body')}
-            </p>
-          </div>
-        </div>
-
-        {/* Core Values & Image */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto mb-20">
-          {/* Image Side */}
-          <div className="relative order-2 lg:order-1">
-            <div className="relative bg-primary rounded-3xl p-8 md:p-12 overflow-hidden">
-              {/* Background Pattern */}
-              <div className="absolute inset-0 opacity-20">
-                <div className="absolute inset-0" style={{
-                  backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%231F2A7A' fill-opacity='0.3'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2.5L25 18l-5 2.5z'/%3E%3C/g%3E%3C/svg%3E")`,
-                }} />
-              </div>
-              <img
-                src={logo}
-                alt="Ferrari Express Laundry"
-                className="relative z-10 w-full max-w-sm mx-auto rounded-2xl shadow-elevated"
-              />
-            </div>
-            {/* Decorative Elements */}
-            <div className="absolute -top-6 -right-6 w-24 h-24 bg-brand-green/20 rounded-full blur-xl animate-pulse" />
-            <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-brand-red/20 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1s' }} />
-          </div>
-
-          {/* Values Content */}
-          <div className="order-1 lg:order-2">
-            <h3 className="text-3xl font-bold mb-8">{t('about.values.title')}</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {values.map((key) => (
-                <div key={key} className="flex items-center gap-3 p-4 bg-card rounded-xl border border-border/50 shadow-sm hover:translate-x-1 transition-transform">
-                  <CheckCircle2 className="h-5 w-5 text-brand-green shrink-0" />
-                  <span className="font-semibold text-foreground">{t(key)}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Updated Stats Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
-          {stats.map((stat, index) => {
+        {/* Stats Grid */}
+        <div
+          ref={statsRef as React.RefObject<HTMLDivElement>}
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto mb-14"
+        >
+          {stats.map((stat, idx) => {
             const Icon = stat.icon;
-            // The value is part of the translation string now, so we split or just display the whole string as the "value"
-            // Actually user requested: "10,000+ Happy Families" as the string. 
-            // So we can display the Icon and the Translated String.
-            // But usually stats have a Value and a Label. 
-            // The provided translations combine them: 'about.stats.families': '10,000+ Happy Families'
-            // I will render the Icon and the Translated Text.
+            const delay = `reveal-delay-${Math.min(idx + 1, 4)}`;
             return (
               <div
                 key={stat.label}
-                className="bg-secondary/50 rounded-2xl p-6 text-center hover:shadow-card transition-all duration-300 hover:-translate-y-1"
+                className={`bg-muted/50 rounded-xl p-5 text-center border border-border/40 hover:border-brand-yellow/50 card-hover reveal ${delay}${statsVisible ? ' reveal-visible' : ''}`}
               >
-                <div className="w-12 h-12 bg-background rounded-full flex items-center justify-center mx-auto mb-4 shadow-sm">
-                  <Icon className="h-6 w-6 text-brand-blue" />
+                <div className="w-10 h-10 bg-brand-yellow/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <Icon className="h-5 w-5 text-brand-blue" />
                 </div>
-                <p className="text-lg md:text-xl font-bold text-foreground leading-tight">
-                  {t(stat.label)}
-                </p>
+                <StatCounter label={t(stat.label)} className="w-full" />
               </div>
             );
           })}
+
+        </div>
+
+        {/* Mission / Vision + Image */}
+        <div
+          ref={bottomRef as React.RefObject<HTMLDivElement>}
+          className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center max-w-5xl mx-auto mb-14"
+        >
+
+          {/* Image */}
+          <div className={`flex justify-center reveal${bottomVisible ? ' reveal-visible' : ''}`}>
+            <div className="bg-brand-yellow/10 rounded-2xl p-6 border border-brand-yellow/30">
+              <img
+                src={logo}
+                alt="Ferrari Express Laundry"
+                className="w-full max-w-xs mx-auto rounded-xl shadow-card"
+              />
+            </div>
+          </div>
+
+          {/* Mission & Vision */}
+          <div className="space-y-5">
+            <div className={`bg-muted/40 rounded-xl p-6 border border-border/40 card-hover reveal reveal-delay-1${bottomVisible ? ' reveal-visible' : ''}`}>
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-9 h-9 bg-brand-red/10 rounded-lg flex items-center justify-center">
+                  <Target className="h-5 w-5 text-brand-red" />
+                </div>
+                <h3 className="text-lg font-bold">{t('about.mission.title')}</h3>
+              </div>
+              <p className="text-sm text-muted-foreground leading-relaxed">{t('about.mission.body')}</p>
+            </div>
+
+            <div className={`bg-muted/40 rounded-xl p-6 border border-border/40 card-hover reveal reveal-delay-2${bottomVisible ? ' reveal-visible' : ''}`}>
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-9 h-9 bg-brand-blue/10 rounded-lg flex items-center justify-center">
+                  <Lightbulb className="h-5 w-5 text-brand-blue" />
+                </div>
+                <h3 className="text-lg font-bold">{t('about.vision.title')}</h3>
+              </div>
+              <p className="text-sm text-muted-foreground leading-relaxed">{t('about.vision.body')}</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Core Values */}
+        <div className="max-w-3xl mx-auto">
+          <h3 className="text-xl font-bold text-center mb-6">{t('about.values.title')}</h3>
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+            {values.map((key, idx) => (
+              <div
+                key={key}
+                className={`flex items-center gap-2 p-3 bg-card rounded-lg border border-border/40 card-hover reveal reveal-delay-${Math.min(idx + 1, 4)}${bottomVisible ? ' reveal-visible' : ''}`}
+              >
+                <CheckCircle2 className="h-4 w-4 text-brand-green shrink-0" />
+                <span className="text-sm font-semibold text-foreground">{t(key)}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

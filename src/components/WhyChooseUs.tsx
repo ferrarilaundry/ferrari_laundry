@@ -1,68 +1,52 @@
 import React from 'react';
 import { Sparkles, Shield, Zap, Heart, Truck } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+
+const features = [
+  { icon: Sparkles, titleKey: 'why.professional', iconClass: 'text-brand-blue', bgClass: 'bg-brand-blue/10' },
+  { icon: Shield,   titleKey: 'why.fabricSafe',   iconClass: 'text-brand-green', bgClass: 'bg-brand-green/10' },
+  { icon: Zap,      titleKey: 'why.fast',          iconClass: 'text-brand-red',  bgClass: 'bg-brand-red/10' },
+  { icon: Heart,    titleKey: 'why.trusted',       iconClass: 'text-brand-blue', bgClass: 'bg-brand-yellow/30' },
+  { icon: Truck,    titleKey: 'why.freeDelivery',  iconClass: 'text-brand-blue', bgClass: 'bg-brand-blue/10' },
+];
 
 const WhyChooseUs = () => {
   const { t } = useLanguage();
-
-  const features = [
-    {
-      icon: Sparkles,
-      titleKey: 'why.professional',
-      color: 'brand-blue',
-    },
-    {
-      icon: Shield,
-      titleKey: 'why.fabricSafe',
-      color: 'brand-green',
-    },
-    {
-      icon: Zap,
-      titleKey: 'why.fast',
-      color: 'brand-red',
-    },
-    {
-      icon: Heart,
-      titleKey: 'why.trusted',
-      color: 'brand-yellow',
-    },
-    {
-      icon: Truck,
-      titleKey: 'why.freeDelivery',
-      color: 'brand-blue', // Reusing blue for a professional logistics feel
-    },
-  ];
+  const { ref: headRef, isVisible: headVisible } = useScrollAnimation();
+  const { ref: gridRef, isVisible: gridVisible } = useScrollAnimation();
 
   return (
-    <section className="py-16 md:py-24 bg-background">
+    <section className="py-16 md:py-20 bg-white">
       <div className="container mx-auto px-4">
-        {/* Section Title */}
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-foreground mb-12">
-          {t('why.title')}
-        </h2>
+        <div
+          ref={headRef as React.RefObject<HTMLDivElement>}
+          className={`text-center mb-10 reveal${headVisible ? ' reveal-visible' : ''}`}
+        >
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
+            {t('why.title')}
+          </h2>
+          <div className="w-12 h-1 bg-brand-yellow mx-auto rounded-full" />
+        </div>
 
-        {/* Features Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 justify-center">
-          {features.map((feature, index) => {
+        <div
+          ref={gridRef as React.RefObject<HTMLDivElement>}
+          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 max-w-5xl mx-auto"
+        >
+          {features.map((feature, idx) => {
             const Icon = feature.icon;
+            const delay = `reveal-delay-${Math.min(idx + 1, 4)}`;
             return (
               <div
                 key={feature.titleKey}
-                className="group relative bg-card rounded-2xl p-6 shadow-card hover:shadow-elevated transition-all duration-300 hover:-translate-y-2 gradient-card border border-border/50"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className={`group bg-muted/40 rounded-xl p-5 border border-border/40 hover:border-brand-yellow/50 card-hover text-center reveal ${delay}${gridVisible ? ' reveal-visible' : ''}`}
               >
-                {/* Icon */}
-                <div className={`w-16 h-16 rounded-xl bg-${feature.color}/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                  <Icon className={`h-8 w-8 text-${feature.color}`} />
+                <div className={`w-11 h-11 rounded-xl ${feature.bgClass} flex items-center justify-center mx-auto mb-3 group-hover:scale-105 transition-transform duration-200`}>
+                  <Icon className={`h-5 w-5 ${feature.iconClass}`} />
                 </div>
-
-                {/* Title */}
-                <h3 className="text-lg font-bold text-foreground">
+                <h3 className="text-sm font-semibold text-foreground leading-tight">
                   {t(feature.titleKey)}
                 </h3>
-
-                {/* Decorative corner */}
-                <div className={`absolute top-0 right-0 w-20 h-20 bg-${feature.color}/5 rounded-bl-[100px] rounded-tr-2xl -z-10`} />
               </div>
             );
           })}

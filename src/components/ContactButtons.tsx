@@ -5,9 +5,9 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
 
 interface ContactButtonsProps {
-    className?: string; // Container className
+    className?: string;
     layout?: 'default' | 'stack' | 'inline';
-    compact?: boolean; // For Header: smaller buttons, shorter text
+    compact?: boolean;
 }
 
 const ContactButtons = ({ className, layout = 'default', compact = false }: ContactButtonsProps) => {
@@ -27,7 +27,7 @@ const ContactButtons = ({ className, layout = 'default', compact = false }: Cont
                 variant="cta"
                 asChild
                 className={cn(
-                    "shadow-lg hover:shadow-xl font-semibold transition-all duration-300",
+                    "shadow-lg hover:shadow-xl font-semibold transition-all duration-200 btn-hover",
                     !compact
                         ? "w-full sm:w-auto h-14 sm:h-12 text-base sm:text-sm rounded-[14px] sm:rounded-lg"
                         : "h-9 w-auto text-sm px-4 rounded-lg shadow-sm"
@@ -43,7 +43,7 @@ const ContactButtons = ({ className, layout = 'default', compact = false }: Cont
                 variant="whatsapp"
                 asChild
                 className={cn(
-                    "shadow-lg hover:shadow-xl font-semibold transition-all duration-300",
+                    "shadow-lg hover:shadow-xl font-semibold transition-all duration-200 btn-hover",
                     !compact
                         ? "w-full sm:w-auto h-14 sm:h-12 text-base sm:text-sm rounded-[14px] sm:rounded-lg"
                         : "h-9 w-auto text-sm px-4 rounded-lg shadow-sm"

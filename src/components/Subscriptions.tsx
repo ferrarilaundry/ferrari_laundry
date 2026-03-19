@@ -19,13 +19,16 @@ const Subscriptions = () => {
     <section id="subscriptions" className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+        <div className="text-center mb-10">
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
             {t('subscriptions.title')}
           </h2>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-sm text-muted-foreground mb-4">
             {t('subscriptions.subtitle')}
           </p>
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-green/10 text-brand-green text-xs font-semibold border border-brand-green/20">
+            {t('subscriptions.freeDelivery')}
+          </span>
         </div>
 
         {/* Plans Grid */}
@@ -52,21 +55,21 @@ const Subscriptions = () => {
                 <p className={`text-lg mb-2 ${plan.popular ? 'text-background/70' : 'text-muted-foreground'}`}>
                   {t('subscriptions.pay')}
                 </p>
-                <p className="text-4xl md:text-5xl font-extrabold mb-1">
+                <p className="text-3xl md:text-4xl font-extrabold mb-1">
                   {plan.pay}
-                  <span className="text-lg font-medium ms-1">{t('subscriptions.kd')}</span>
+                  <span className="text-base font-medium ms-1">{t('subscriptions.kd')}</span>
                 </p>
 
                 {/* Divider */}
-                <div className={`w-16 h-0.5 mx-auto my-6 ${plan.popular ? 'bg-primary' : 'bg-border'}`} />
+                <div className={`w-12 h-0.5 mx-auto my-4 ${plan.popular ? 'bg-primary' : 'bg-border'}`} />
 
                 {/* Get */}
                 <p className={`text-lg mb-2 ${plan.popular ? 'text-background/70' : 'text-muted-foreground'}`}>
                   {t('subscriptions.get')}
                 </p>
-                <p className={`text-4xl md:text-5xl font-extrabold mb-4 ${plan.popular ? 'text-primary' : 'text-brand-green'}`}>
+                <p className={`text-3xl md:text-4xl font-extrabold mb-4 ${plan.popular ? 'text-primary' : 'text-brand-green'}`}>
                   {plan.get}
-                  <span className="text-lg font-medium ms-1">{t('subscriptions.kd')}</span>
+                  <span className="text-base font-medium ms-1">{t('subscriptions.kd')}</span>
                 </p>
 
                 {/* Free Delivery Included */}

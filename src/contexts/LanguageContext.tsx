@@ -21,7 +21,7 @@ const translations = {
     'nav.whatsapp': 'WhatsApp',
 
     // Hero
-    'hero.brandName': 'Ferrari Express Laundry',
+    'hero.brandName': 'Welcome to Ferrari Express Laundry',
     'hero.headline': 'Professional Laundry & Dry Cleaning in Kuwait',
     'hero.subheadline': 'We care for your clothes like our own.',
     'hero.callNow': 'Call Now',
@@ -84,10 +84,27 @@ const translations = {
     'about.values.hygiene': 'Hygiene',
     'about.values.sustainability': 'Sustainability',
 
-    'about.stats.families': '10,000+ Happy Families',
-    'about.stats.experience': '20+ Years Experience',
-    'about.stats.rating': '5★ Customer Rating',
-    'about.stats.quality': '100% Quality Guaranteed',
+    'about.stats.kilos': '21.6M+ Kilos Washed',
+    'about.stats.families': '750K+ Happy Families',
+    'about.stats.staff': '250+ Expert Staff',
+    'about.stats.vehicles': '70+ Delivery Vehicles',
+
+    // Reviews
+    'reviews.title': 'Customer Reviews',
+    'reviews.1': 'Excellent service and fast delivery!',
+    'reviews.2': 'Best laundry in Kuwait. Highly recommended.',
+    'reviews.3': 'Clothes come back perfectly clean and fresh.',
+    'reviews.author1': 'Sarah M.',
+    'reviews.author2': 'Ahmad K.',
+    'reviews.author3': 'Fatima A.',
+
+    // Business
+    'business.title': 'Business & Contracts',
+    'business.description': 'We provide laundry solutions for companies, hotels, salons, and businesses across Kuwait.',
+    'business.bulk': 'Bulk Laundry',
+    'business.contracts': 'Corporate Contracts',
+    'business.delivery': 'Reliable Delivery',
+    'business.pricing': 'Custom Pricing',
 
     // Header - Add About
     'nav.about': 'About Us',
@@ -161,7 +178,7 @@ const translations = {
     'nav.whatsapp': 'واتساب',
 
     // Hero
-    'hero.brandName': 'مصبغة فيراري إكسبريس',
+    'hero.brandName': 'مرحباً بكم في مصبغة فيراري إكسبريس',
     'hero.headline': 'غسيل وتنظيف جاف باحترافية في الكويت',
     'hero.subheadline': 'نعتني بملابسك كما لو كانت لنا',
     'hero.callNow': 'اتصل الآن',
@@ -224,10 +241,27 @@ const translations = {
     'about.values.hygiene': 'النظافة',
     'about.values.sustainability': 'الاستدامة',
 
-    'about.stats.families': '+10,000 عائلة سعيدة',
-    'about.stats.experience': '+20 سنة خبرة',
-    'about.stats.rating': 'تقييم 5 نجوم',
-    'about.stats.quality': 'جودة مضمونة 100%',
+    'about.stats.kilos': '21.6 مليون كجم مغسول',
+    'about.stats.families': '750 ألف+ عميل سعيد',
+    'about.stats.staff': '250+ موظف خبير',
+    'about.stats.vehicles': '70+ مركبة توصيل',
+
+    // Reviews
+    'reviews.title': 'آراء العملاء',
+    'reviews.1': 'خدمة ممتازة وسريعة جدًا!',
+    'reviews.2': 'أفضل مغسلة في الكويت.',
+    'reviews.3': 'الملابس ترجع نظيفة ومعطرة بشكل رائع.',
+    'reviews.author1': 'سارة م.',
+    'reviews.author2': 'أحمد ك.',
+    'reviews.author3': 'فاطمة ع.',
+
+    // Business
+    'business.title': 'الأعمال والعقود',
+    'business.description': 'نوفر خدمات غسيل احترافية للشركات والفنادق والصالونات في جميع أنحاء الكويت.',
+    'business.bulk': 'غسيل كميات كبيرة',
+    'business.contracts': 'عقود الشركات',
+    'business.delivery': 'توصيل موثوق',
+    'business.pricing': 'أسعار مخصصة',
 
     // Header - Add About
     'nav.about': 'من نحن',

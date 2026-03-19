@@ -7,60 +7,60 @@
 @layer base {
   :root {
     /* Ferrari Express Brand Colors */
-    --brand-yellow: 54 100% 50%;
-    --brand-red: 1 97% 45%;
-    --brand-blue: 230 59% 30%;
-    --brand-green: 146 68% 39%;
+    --brand-yellow: 50 100% 61%;
+    --brand-red: 1 75% 55%;
+    --brand-blue: 222 37% 19%;
+    --brand-green: 142 70% 49%;
     --brand-white: 0 0% 100%;
     
     /* Semantic tokens */
     --background: 0 0% 100%;
-    --foreground: 230 59% 30%;
+    --foreground: 222 37% 19%;
 
     --card: 0 0% 100%;
-    --card-foreground: 230 59% 30%;
+    --card-foreground: 222 37% 19%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 230 59% 30%;
+    --popover-foreground: 222 37% 19%;
 
-    --primary: 54 100% 50%;
-    --primary-foreground: 230 59% 30%;
+    --primary: 50 100% 61%;
+    --primary-foreground: 222 37% 19%;
 
-    --secondary: 54 100% 95%;
-    --secondary-foreground: 230 59% 30%;
+    --secondary: 220 33% 98%;
+    --secondary-foreground: 222 37% 19%;
 
-    --muted: 54 30% 96%;
-    --muted-foreground: 230 20% 50%;
+    --muted: 220 33% 96%;
+    --muted-foreground: 222 20% 50%;
 
-    --accent: 146 68% 39%;
+    --accent: 142 70% 49%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 1 97% 45%;
+    --destructive: 1 75% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    --cta: 1 97% 45%;
+    --cta: 1 75% 55%;
     --cta-foreground: 0 0% 100%;
 
-    --whatsapp: 146 68% 39%;
+    --whatsapp: 142 70% 49%;
     --whatsapp-foreground: 0 0% 100%;
 
-    --border: 54 30% 85%;
-    --input: 54 30% 85%;
-    --ring: 54 100% 50%;
+    --border: 220 30% 85%;
+    --input: 220 30% 85%;
+    --ring: 50 100% 61%;
 
     --radius: 0.75rem;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(54 100% 50%) 0%, hsl(54 100% 70%) 50%, hsl(54 100% 85%) 100%);
-    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(54 100% 98%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(50 100% 61%) 0%, hsl(50 100% 80%) 50%, hsl(220 33% 98%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(220 33% 98%) 100%);
     
-    /* Shadows */
-    --shadow-soft: 0 4px 20px -4px hsl(230 59% 30% / 0.1);
-    --shadow-card: 0 8px 30px -8px hsl(230 59% 30% / 0.15);
-    --shadow-elevated: 0 20px 50px -15px hsl(230 59% 30% / 0.2);
+    /* Shadows - simplified */
+    --shadow-soft: 0 4px 15px -4px hsl(222 37% 19% / 0.05);
+    --shadow-card: 0 6px 20px -6px hsl(222 37% 19% / 0.1);
+    --shadow-elevated: 0 15px 40px -10px hsl(222 37% 19% / 0.15);
 
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-foreground: 222 37% 19%;
     --sidebar-primary: 240 5.9% 10%;
     --sidebar-primary-foreground: 0 0% 98%;
     --sidebar-accent: 240 4.8% 95.9%;
@@ -70,25 +70,25 @@
   }
 
   .dark {
-    --background: 230 59% 10%;
-    --foreground: 54 100% 95%;
-    --card: 230 59% 15%;
-    --card-foreground: 54 100% 95%;
-    --popover: 230 59% 15%;
-    --popover-foreground: 54 100% 95%;
-    --primary: 54 100% 50%;
-    --primary-foreground: 230 59% 30%;
-    --secondary: 230 40% 20%;
-    --secondary-foreground: 54 100% 95%;
-    --muted: 230 40% 20%;
-    --muted-foreground: 54 30% 70%;
-    --accent: 146 68% 39%;
+    --background: 222 37% 10%;
+    --foreground: 50 100% 95%;
+    --card: 222 37% 15%;
+    --card-foreground: 50 100% 95%;
+    --popover: 222 37% 15%;
+    --popover-foreground: 50 100% 95%;
+    --primary: 50 100% 61%;
+    --primary-foreground: 222 37% 19%;
+    --secondary: 222 40% 20%;
+    --secondary-foreground: 50 100% 95%;
+    --muted: 222 40% 20%;
+    --muted-foreground: 222 30% 70%;
+    --accent: 142 70% 49%;
     --accent-foreground: 0 0% 100%;
-    --destructive: 1 97% 45%;
+    --destructive: 1 75% 55%;
     --destructive-foreground: 0 0% 100%;
-    --border: 230 40% 25%;
-    --input: 230 40% 25%;
-    --ring: 54 100% 50%;
+    --border: 222 40% 25%;
+    --input: 222 40% 25%;
+    --ring: 50 100% 61%;
   }
 }
 
@@ -134,7 +134,7 @@
     box-shadow: var(--shadow-elevated);
   }
 
-  /* Animation utilities */
+  /* ── Existing one-shot animations ─────────────────────────────────── */
   .animate-fade-in {
     animation: fadeIn 0.6s ease-out forwards;
   }
@@ -151,8 +151,48 @@
     animation: float 3s ease-in-out infinite;
   }
 
+  /* ── WhatsApp floating button pulse (green glow) ───────────────────── */
   .animate-pulse-soft {
-    animation: pulseSoft 2s ease-in-out infinite;
+    animation: pulseSoft 2.5s ease-in-out infinite;
+  }
+
+  /* ── Scroll-reveal base state (invisible, shifted down) ─────────────── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.65s ease-out, transform 0.65s ease-out;
+    will-change: opacity, transform;
+  }
+
+  /* Triggered by JS when element enters viewport */
+  .reveal.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Staggered children – add data-delay="1|2|3…" or use sibling selectors */
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* ── Premium card hover ──────────────────────────────────────────────── */
+  .card-hover {
+    transition: transform 0.25s ease-out, box-shadow 0.25s ease-out;
+    will-change: transform;
+  }
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px -8px hsl(222 37% 19% / 0.15);
+  }
+
+  /* ── Button scale hover ──────────────────────────────────────────────── */
+  .btn-hover {
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    will-change: transform;
+  }
+  .btn-hover:hover {
+    transform: scale(1.03);
   }
 }
 
@@ -188,14 +228,43 @@
   50% { transform: translateY(-10px); }
 }
 
+/* WhatsApp green pulse */
 @keyframes pulseSoft {
   0%, 100% { 
-    transform: scale(1); 
-    box-shadow: 0 0 0 0 hsl(var(--cta) / 0.4);
+    transform: scale(1);
+    box-shadow: 0 0 0 0 hsl(142 70% 49% / 0.45);
   }
   50% { 
-    transform: scale(1.02); 
-    box-shadow: 0 0 20px 5px hsl(var(--cta) / 0.2);
+    transform: scale(1.04);
+    box-shadow: 0 0 0 8px hsl(142 70% 49% / 0);
+  }
+}
+
+/* ── Mobile: softer animations on smaller screens ──────────────────────── */
+@media (max-width: 640px) {
+  .reveal {
+    transform: translateY(14px);
+    transition-duration: 0.5s;
+  }
+  .card-hover:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* ── Respect user's motion preference ──────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal.reveal-visible,
+  .card-hover,
+  .card-hover:hover,
+  .btn-hover,
+  .btn-hover:hover,
+  .animate-pulse-soft,
+  .animate-float {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
   }
 }
 
